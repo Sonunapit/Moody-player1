@@ -12,6 +12,8 @@ router.post('/songs',upload.single("audio"),async(req,res)=>{
     console.log(req.body);
     console.log(req.file)
     const fileData = await uploadFile(req.file);
+
+    
     
     const song = await songModel.create({
         title:req.body.title,
